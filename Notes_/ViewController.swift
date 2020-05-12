@@ -16,8 +16,8 @@ class ViewController: UITableViewController {
         reload()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         reload()
     }
     
@@ -40,7 +40,17 @@ class ViewController: UITableViewController {
         notes = NoteManager.main.getAllNotes()
         self.tableView.reloadData()
     }
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NoteSegue" {
+            if let destination = segue.destination as?
+                NoteViewController {
+                destination.note = notes[tableView.indexPathForSelectedRow!.row]
+                
+            }
+        }
+    }
 
 }
 

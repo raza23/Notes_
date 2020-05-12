@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,6 +32,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="C3k-1Z-tkn" kind="show" identifier="NoteSegue" id="Kz8-yE-eLU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -51,6 +55,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGk-1r-5qT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="132.58928571428572"/>
+        </scene>
+        <!--Note View Controller-->
+        <scene sceneID="Beh-2T-VE8">
+            <objects>
+                <viewController id="C3k-1Z-tkn" customClass="NoteViewController" customModule="Notes_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ELY-Xh-MCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="TEXT" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sEq-4j-iG2">
+                                <rect key="frame" x="54" y="224" width="307" height="394"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9ik-pV-Mfd" firstAttribute="bottom" secondItem="sEq-4j-iG2" secondAttribute="bottom" constant="195" id="3TV-Us-rDc"/>
+                            <constraint firstItem="sEq-4j-iG2" firstAttribute="leading" secondItem="9ik-pV-Mfd" secondAttribute="leading" constant="54" id="8f6-3w-1Hh"/>
+                            <constraint firstItem="sEq-4j-iG2" firstAttribute="top" secondItem="9ik-pV-Mfd" secondAttribute="top" constant="136" id="yYB-EI-rcp"/>
+                            <constraint firstItem="9ik-pV-Mfd" firstAttribute="trailing" secondItem="sEq-4j-iG2" secondAttribute="trailing" constant="53" id="yjL-rR-EyI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9ik-pV-Mfd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aIy-C1-C9i"/>
+                    <connections>
+                        <outlet property="textView" destination="sEq-4j-iG2" id="Zoi-c6-phW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Md-IL-aVZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986.9565217391305" y="132.58928571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LgX-O7-3Sp">

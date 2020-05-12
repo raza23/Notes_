@@ -11,7 +11,7 @@ import SQLite3
 
 struct Note {
     let id: Int
-    let contents: String
+    var contents: String
 }
 
 class NoteManager {
@@ -78,6 +78,24 @@ class NoteManager {
         sqlite3_finalize(statement)
         return result
         
+    }
+    
+    func save(note: Note) {
+        connect()
+        
+        var statement: OpaquePointer!
+        if sqlite3_prepare(database, "UPDATE notes SET contents = ? WHERE rowid = ?", -1, &statement, nil) != SQLITE_OK {
+            print ("error while updating")
+            
+        }
+        
+        sqlite3_bind_text(statement, 1, NSString(string: note.contents).utf8String, -1, nil)
+        sqlite3_bind_int(statement,2, Int32(note.id))
+        if sqlite3_step(statement) != SQLITE_DONE {
+            print ("error running update")
+        }
+        
+        sqlite3_finalize(statement)
     }
 }
             
