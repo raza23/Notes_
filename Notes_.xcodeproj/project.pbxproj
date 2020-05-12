@@ -13,6 +13,7 @@
 		42326BBD24697F9300F4F0C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42326BBB24697F9300F4F0C1 /* Main.storyboard */; };
 		42326BBF24697F9400F4F0C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42326BBE24697F9400F4F0C1 /* Assets.xcassets */; };
 		42326BC224697F9400F4F0C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42326BC024697F9400F4F0C1 /* LaunchScreen.storyboard */; };
+		42326BCA2469816300F4F0C1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42326BC92469816300F4F0C1 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		42326BBE24697F9400F4F0C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42326BC124697F9400F4F0C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42326BC324697F9400F4F0C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42326BC92469816300F4F0C1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				42326BB524697F9300F4F0C1 /* AppDelegate.swift */,
 				42326BB724697F9300F4F0C1 /* SceneDelegate.swift */,
+				42326BC92469816300F4F0C1 /* Note.swift */,
 				42326BB924697F9300F4F0C1 /* ViewController.swift */,
 				42326BBB24697F9300F4F0C1 /* Main.storyboard */,
 				42326BBE24697F9400F4F0C1 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				42326BBA24697F9300F4F0C1 /* ViewController.swift in Sources */,
 				42326BB624697F9300F4F0C1 /* AppDelegate.swift in Sources */,
 				42326BB824697F9300F4F0C1 /* SceneDelegate.swift in Sources */,
+				42326BCA2469816300F4F0C1 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    var notes: [Note] = []
+    
+    @IBAction func createNote(){
+       let _ = NoteManager.main.create()
+        reload()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        reload()
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notes.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
+        cell.textLabel?.text = notes[indexPath.row].contents
+        return cell
+    }
+    
+    func reload() {
+//        gives all notes and reloads notes
+        notes = NoteManager.main.getAllNotes()
+        self.tableView.reloadData()
     }
 
 
